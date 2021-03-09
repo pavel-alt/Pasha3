@@ -10,3 +10,15 @@ def my_func(a, b, c):
 
 
 print(my_func(10, 20, 30))
+
+
+"""
+Решение преподавателя
+"""
+
+
+def sum_of_max(*args):
+    return sum(args) - min(args)
+
+
+print(sum_of_max(10, 20, 30))
