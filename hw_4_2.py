@@ -8,6 +8,6 @@ l_1 = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 l_2 = [l_1[el] for el in range(1, len(l_1)) if l_1[el] > l_1[el - 1]]
 print(l_2)
 
-l_3 = [el for ind, el in enumerate(l_1[:1], 1) if el > l_1[ind - 1]]
+l_3 = [el for ind, el in enumerate(l_1[1:], 1) if el > l_1[ind - 1]]
 print(l_3)
-print(l_1[-1])
+
