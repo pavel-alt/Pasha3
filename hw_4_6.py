@@ -16,9 +16,9 @@ for el in count(3):
         print(el)
 
 
-с = 0
+c = 0
 for el in cycle("ABC"):
-    if с > 10:
+    if c > 10:
         break
     print(el)
-    с += 1
+    c += 1
