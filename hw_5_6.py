@@ -10,10 +10,13 @@
 # Пример словаря:
 # {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 
+
 with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_6.txt", "r", encoding="utf-8") as new_f:
+    new_dict = {}
     for line in new_f.readlines():
-        line_str = "".join([el for el in line if el.isdigit() or el == " "])
-        line_dict = {[el for el in line.split()][0]: sum([int(el) for el in line_str.split() if el.isdigit()])}
-        print(line_dict)
+        name, hours_1 = line.split(":")
+        res_hours = sum(list(map(int, ("".join([el for el in hours_1 if el.isdigit() or el == " "])).split())))
+        new_dict.update({name: res_hours})
+    print(new_dict)
 
 
