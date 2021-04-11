@@ -12,4 +12,29 @@
 # [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 #
 # Подсказка: использовать менеджеры контекста.
+import json
+
+with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_7.txt", "r", encoding="utf-8") as new_f:
+    firms_profit = {}
+    average_profit = {}
+    success_profit = []
+    res_list = [firms_profit, average_profit]
+    for line in new_f.readlines():
+        line_list = [el for el in line.split()]
+        name = line_list[0]
+        profit = int(line_list[2]) - int(line_list[3])
+
+        firms_profit.update({name: profit})
+        if profit > 0:
+            success_profit.append(profit)
+    average_profit.update({"average_profit": sum(success_profit) / len(success_profit)})
+
+    print(average_profit)
+    print(firms_profit)
+    print(res_list)
+
+with open("test_hw_5_7.json", "w") as new_j_f:
+    json.dump(res_list, new_j_f)
+
+
 
