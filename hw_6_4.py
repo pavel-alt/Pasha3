@@ -9,6 +9,7 @@ TownCar и WorkCar переопределите метод show_speed. При з
 
 from time import sleep
 
+
 class Car:
 
     def __init__(self, speed, color, name, is_police: bool):
@@ -58,6 +59,7 @@ class SportCar(Car):
 
 
 class WorkCar(Car):
+
     def show_speed(self):
         print(f"The car moving about {self.speed} km/h")
         if self.speed > 40:
@@ -68,6 +70,7 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
+
     def hello(self):
         print("I'll catch you!")
 
