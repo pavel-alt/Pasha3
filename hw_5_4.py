@@ -1,15 +1,13 @@
-# 4. Создать (не программно) текстовый файл со следующим содержимым:
-# One — 1
-# Two — 2
-# Three — 3
-# Four — 4
-# Необходимо написать программу, открывающую файл на чтение и считывающую построчно данные.
-# При этом английские числительные должны заменяться на русские. Новый блок строк должен записываться
-# в новый текстовый файл.
+"""4. Создать (не программно) текстовый файл со следующим содержимым:
+One — 1
+Two — 2
+Three — 3
+Four — 4
+Необходимо написать программу, открывающую файл на чтение и считывающую построчно данные.
+При этом английские числительные должны заменяться на русские. Новый блок строк должен записываться
+в новый текстовый файл."""
 
 from translate import Translator
-
-
 
 """ Решение при помощи библиотеки translate"""
 
@@ -25,7 +23,10 @@ with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4.txt", "r", 
 
 
 """Решение при помощи словаря"""
-numbers = {"One": "Один", "Two": "Два", "Three": "Три", "Four": "Четыре"}
+numbers = {"One": "Один",
+           "Two": "Два",
+           "Three": "Три",
+           "Four": "Четыре"}
 
 with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4.txt", "r", encoding="utf-8") as new_f:
     with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4_1.txt", "w", encoding="utf-8") as new_f_1:
@@ -35,3 +36,20 @@ with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4.txt", "r", 
             line[0] = numbers[line[0]]
             print(line)
             new_f_1.writelines(line)
+
+"""Решене преподавателя"""
+
+numbers = {"One": "Один",
+           "Two": "Два",
+           "Three": "Три",
+           "Four": "Четыре"}
+
+with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4.txt", "r", encoding="utf-8") as new_f:
+    with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_4_1.txt", "w", encoding="utf-8") as new_f_1:
+        lines = new_f.readlines()
+        for line in lines:
+            num_list = line.split(" — ")
+            new_f_1.write(f"{numbers[num_list[0]]} - {numbers[1]}")
+
+
+"""Хорошая идея со сплитом " — ". Странно, что не допер сам."""
