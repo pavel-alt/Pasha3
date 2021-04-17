@@ -21,3 +21,6 @@ with open(r"C:\Users\paaltukhov\PycharmProjects\Паша\test_hw_5_6.txt", "r", 
     print(new_dict)
 
 
+"""Вместо isdigit можно использоавть строку 
+''.join(i if i in '0123456789' else ' '
+"""
