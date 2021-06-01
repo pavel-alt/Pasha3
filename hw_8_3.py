@@ -21,10 +21,13 @@ while True:
     try:
         user_data = input("Введи число: ")
         if user_data == "stop":
+            print(res_list)
             break
         if not user_data.isdigit():
             raise IsDigit("Вы ввели не число!")
-    except IsDigit("jhvb"):
+        res_list.append(user_data)
+    except IsDigit as err:
+        print(err)
 
-        # res_list.append(user_data)
+
 
