@@ -17,7 +17,7 @@ try:
     d_2 = int(d_2)
     if d_2 == 0:
         raise ZeroDiv("Вы ввели ноль!")
-except ValueError:
+except ValueError as err:
     print("Вы ввели не число")
 except ZeroDiv as err:
     print(err)
