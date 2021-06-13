@@ -101,3 +101,6 @@ for i in in_storage:
 # obj_3 = Copier("Copier", "xerox", "100", 150, 1, 100)
 # print(obj_3.paper)
 # obj_3.action()
+"""
+Пусть эта херня работает
+"""
